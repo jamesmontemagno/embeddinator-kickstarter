@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "Linting..."
+swiftlint lint --quiet --strict

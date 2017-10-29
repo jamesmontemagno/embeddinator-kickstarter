@@ -12,6 +12,12 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+[Kk]ickstarterShared/iosoutput/
+[Kk]ickstarterShared/androidoutput/
+
+androidoutput/
+iosoutput/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -297,3 +303,5 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+KickstarterShared/androidoutput/classes/md5b60ffeb829f638581ab2bb9b1a7f4f3f/ListViewAdapter.class
+KickstarterShared/.droidres/.kickstartershared.droidres.db

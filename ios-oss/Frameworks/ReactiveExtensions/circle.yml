@@ -1,0 +1,31 @@
+machine:
+  xcode:
+    version: 8.3
+dependencies:
+  pre:
+    - brew update || brew update
+    - brew install swiftlint
+    - system_profiler SPSoftwareDataType
+    - security list-keychains
+    - security find-identity -p codesigning
+    - instruments -s devices
+    - xcodebuild -showsdks
+  override:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive
+test:
+  pre:
+    - xcrun instruments -w '547B1B63-3F66-4E5B-8001-F78F2F1CDEA7' || true
+    - sleep 15
+  override:
+    - set -o pipefail &&
+      swiftlint lint --strict --reporter json |
+      tee $CIRCLE_ARTIFACTS/swiftlint-report.json
+    - bin/test iOS 9.3
+    - bin/test iOS 10.2
+    - bin/test tvOS 10.0
+experimental:
+  notify:
+    branches:
+      only:
+        - master

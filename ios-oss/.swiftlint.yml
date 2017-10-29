@@ -1,0 +1,41 @@
+disabled_rules:
+  - block_based_kvo # swift 3.2
+  - closure_parameter_position
+  - discarded_notification_center_observer
+  - file_length
+  - function_body_length
+  - function_parameter_count
+  - identifier_name
+  - large_tuple
+  - nesting
+  - type_body_length
+  - type_name
+  - trailing_comma
+  - weak_delegate
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+  - private_outlet
+line_length: 110
+type_body_length:
+  warning: 300
+  error: 400
+excluded:
+  - Carthage/
+  - Frameworks/
+  - Kickstarter-iOS.playground/
+  - Kickstarter-tvOS.playground/
+  - Library/Strings.swift
+  - bin/strings.swift
+reporter: "xcode"
+custom_rules:
+  localized_lensing:
+    name: "Localized Lensing"
+    regex: '\.~\s+Strings\s*\.'
+    message: "Capture calls to `Strings` functions using `%~ { _ in Strings... }`"
+    severity: error
+  record_mode_prohibited:
+    name: "Record Mode Prohibited"
+    regex: "recordMode = true"
+    message: "Do not use `recordMode = true`."
+    severity: error
