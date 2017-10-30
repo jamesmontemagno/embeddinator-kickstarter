@@ -271,11 +271,15 @@ extension DiscoveryPageViewController: ActivitySampleBackingCellDelegate, Activi
 
 extension DiscoveryPageViewController: DiscoveryOnboardingCellDelegate {
   internal func discoveryOnboardingTappedSignUpLoginButton() {
-    let loginTout = LoginToutViewController.configuredWith(loginIntent: .discoveryOnboarding)
+    
+    let suggession = KickstarterShared_SuggestionHelper.init()
+    suggession?.showSuggestionView()
+    
+    /*let loginTout = LoginToutViewController.configuredWith(loginIntent: .discoveryOnboarding)
     let nav = UINavigationController(rootViewController: loginTout)
     nav.modalPresentationStyle = .formSheet
 
-    self.present(nav, animated: true, completion: nil)
+    self.present(nav, animated: true, completion: nil)*/
   }
 }
 
@@ -318,6 +322,7 @@ extension DiscoveryPageViewController: DiscoveryPostcardCellDelegate {
   }
 
   internal func discoveryPostcardCellGoToLoginTout() {
+    
     let vc = LoginToutViewController.configuredWith(loginIntent: .starProject)
     let nav = UINavigationController(rootViewController: vc)
     nav.modalPresentationStyle = .formSheet

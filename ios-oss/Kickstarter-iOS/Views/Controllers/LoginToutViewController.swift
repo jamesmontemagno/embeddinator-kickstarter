@@ -195,6 +195,8 @@ internal final class LoginToutViewController: UIViewController, MFMailComposeVie
   }
 
   fileprivate func pushLoginViewController() {
+    
+    
     self.navigationController?.pushViewController(LoginViewController.instantiate(), animated: true)
     self.navigationItem.backBarButtonItem = UIBarButtonItem.back(nil, selector: nil)
   }

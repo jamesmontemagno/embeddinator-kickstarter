@@ -16,10 +16,10 @@ internal final class LoginViewController: UIViewController {
 
   internal let viewModel: LoginViewModelType = LoginViewModel()
 
-  internal static func instantiate() -> UIViewController {
+  internal static func instantiate() -> LoginViewController {
     
-    return KickstarterShared_SuggestionViewController.init();
-    //return Storyboard.Login.instantiate(LoginViewController.self)
+    
+    return Storyboard.Login.instantiate(LoginViewController.self)
   }
 
   override func viewDidLoad() {

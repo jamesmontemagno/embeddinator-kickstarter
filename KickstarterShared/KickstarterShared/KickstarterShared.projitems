@@ -12,10 +12,12 @@
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
     <Folder Include="$(MSBuildThisFileDirectory)View\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Model\Suggestion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SuggestionViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\SuggestionView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDialer.cs" />
   </ItemGroup>
 </Project>

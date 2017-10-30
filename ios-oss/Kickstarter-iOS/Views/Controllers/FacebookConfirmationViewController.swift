@@ -136,7 +136,9 @@ internal final class FacebookConfirmationViewController: UIViewController,
   }
 
   fileprivate func goToLoginViewController() {
-    self.navigationController?.pushViewController(LoginViewController.instantiate(), animated: true)
+    
+
+    /*self.navigationController?.pushViewController(LoginViewController.instantiate(), animated: true)*/
   }
 
   fileprivate func showHelpSheet(helpTypes: [HelpType]) {
