@@ -44,6 +44,7 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
     //     instances if we use the one from `Environment.init`.
     AppEnvironment.replaceCurrentEnvironment(facebookAppDelegate: FBSDKApplicationDelegate.sharedInstance())
 
+    KsApi.Secrets.isOSS = true;
     #if DEBUG
       if KsApi.Secrets.isOSS {
         AppEnvironment.replaceCurrentEnvironment(apiService: MockService())
