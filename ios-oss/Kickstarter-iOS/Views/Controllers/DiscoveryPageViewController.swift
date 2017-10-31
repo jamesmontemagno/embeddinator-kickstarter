@@ -273,7 +273,7 @@ extension DiscoveryPageViewController: DiscoveryOnboardingCellDelegate {
   internal func discoveryOnboardingTappedSignUpLoginButton() {
     
     let suggession = KickstarterShared_SuggestionHelper.init()
-    suggession?.showSuggestionView()
+    suggession?.showPhonewordView()
     
     /*let loginTout = LoginToutViewController.configuredWith(loginIntent: .discoveryOnboarding)
     let nav = UINavigationController(rootViewController: loginTout)

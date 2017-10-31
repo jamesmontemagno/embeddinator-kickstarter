@@ -38,10 +38,10 @@
 	      <type>AfterBuild</type>
 	      <command>mono '${SolutionDir}/packages/Embeddinator-4000.0.3.0/tools/objcgen.exe' 'bin/Debug/KickstarterShared.dll' --target=framework --platform=iOS --outdir='${SolutionDir}/iosoutput' -c --debug</command>
 	    </Command>
-		<Command>
-          <type>AfterBuild</type>
-          <command>cp -R '${SolutionDir}/iosoutput/KickstarterShared.framework/' '${SolutionDir}/../ios-oss/Frameworks/KickstarterShared/KickstarterShared.framework'</command>
-        </Command>
+	    <Command>
+	      <type>AfterBuild</type>
+	      <command>cp -R '${SolutionDir}/iosoutput/KickstarterShared.framework/' '${SolutionDir}/../ios-oss/Frameworks/KickstarterShared/KickstarterShared.framework'</command>
+	    </Command>
 	  </CustomCommands>
 	</CustomCommands>
   </PropertyGroup>
@@ -85,7 +85,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="..\KickstarterShared\KickstarterShared.projitems" Label="Shared" Condition="Exists('..\KickstarterShared\KickstarterShared.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\KickstartShared.PCL\KickstarterShared.csproj">
+      <Project>{01F7EED5-C953-4870-ACBF-6D7DFA14CEB8}</Project>
+      <Name>KickstarterShared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.19271-pre2\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.19271-pre2\build\netstandard1.0\Xamarin.Forms.targets')" />
 </Project>

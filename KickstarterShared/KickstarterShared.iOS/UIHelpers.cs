@@ -2,6 +2,7 @@
 using System.Linq;
 using Foundation;
 using KickstarterShared.View;
+using KickstartShared.Shared.View;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -12,12 +13,20 @@ namespace KickstarterShared
     public class SuggestionHelper
     {
 
-        Page view;
+        Page view, view2;
         public SuggestionHelper()
         {
             Xamarin.Forms.Forms.Init();
             view = new SuggestionView();
+            view2 = new PhonewordView();
+        }
 
+        public void ShowPhonewordView()
+        {
+            var controller = view2.CreateViewController();
+            var vc = GetVisibleViewController();
+
+            vc.PresentViewController(controller, true, () => { });
         }
           
         public void ShowSuggestionView()

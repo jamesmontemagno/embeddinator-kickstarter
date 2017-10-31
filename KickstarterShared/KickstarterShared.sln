@@ -1,11 +1,11 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "KickstarterShared", "KickstarterShared\KickstarterShared.shproj", "{F6D1610B-032D-4A84-8E1C-2575408B4E94}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KickstarterShared.iOS", "KickstarterShared.iOS\KickstarterShared.iOS.csproj", "{37F41A2B-CACE-4C85-B8ED-B25D988A282E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KickstarterShared.Android", "KickstarterShared.Droid\KickstarterShared.Android.csproj", "{4933AEA7-1F09-43A5-B4D2-40A919943B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KickstarterShared", "KickstartShared.PCL\KickstarterShared.csproj", "{01F7EED5-C953-4870-ACBF-6D7DFA14CEB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,5 +21,9 @@ Global
 		{4933AEA7-1F09-43A5-B4D2-40A919943B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4933AEA7-1F09-43A5-B4D2-40A919943B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4933AEA7-1F09-43A5-B4D2-40A919943B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F7EED5-C953-4870-ACBF-6D7DFA14CEB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F7EED5-C953-4870-ACBF-6D7DFA14CEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F7EED5-C953-4870-ACBF-6D7DFA14CEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F7EED5-C953-4870-ACBF-6D7DFA14CEB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
