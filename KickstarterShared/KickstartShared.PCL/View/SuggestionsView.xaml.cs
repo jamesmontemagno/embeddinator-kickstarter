@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using KickstarterShared.ViewModel;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace KickstarterShared.View
 {
@@ -14,6 +15,8 @@ namespace KickstarterShared.View
 		public SuggestionsView()
 		{
 			BindingContext = _vm = new SuggestionsViewModel();
+
+			On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
 			InitializeComponent();
 		}

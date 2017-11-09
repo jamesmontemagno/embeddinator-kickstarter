@@ -11,5 +11,10 @@ namespace KickstarterShared.Model
 		{
 			get; set;
 		}
+
+		public string Photo
+		{
+			get; set;
+		}
 	}
 }

@@ -88,10 +88,22 @@
 	
 	<ContentPage.Content>
 		<StackLayout>
-			<Button Text="Back" TextColor="White" BackgroundColor="Navy"
-			HorizontalOptions="Fill"
-				HeightRequest="50"
-			Clicked="Handle_Clicked" />
+
+			<Grid HeightRequest="60" BackgroundColor="White">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="60"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="60"/>
+				</Grid.ColumnDefinitions>
+
+				<Button Grid.Column="0" 
+					Text="Back" TextColor="Black" 
+					WidthRequest="60"
+					HeightRequest="60"
+					Clicked="Handle_Clicked" />
+			</Grid>
+
+			<BoxView BackgroundColor="Black" HorizontalOptions="Fill" HeightRequest="1"/>
 		 
         <ListView
 			HasUnevenRows="true"
@@ -101,15 +113,15 @@
 			<ListView.RowHeight>
                 <OnPlatform 
                     x:TypeArguments="x:Int32"
-                    Android="210"
-                    iOS="210"
-                    WinPhone="240"/>
+                    Android="310"
+                    iOS="310"
+                    WinPhone="340"/>
             </ListView.RowHeight>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid>
-                            <ContentView HeightRequest="220"
+                            <ContentView
                                  BackgroundColor="{StaticResource WhiteColor}"
                                  Margin="20, 0, 20, 20">
                                 <Grid>
@@ -119,9 +131,11 @@
                                         <RowDefinition Height="1.5*" />
                                         <RowDefinition Height="0.25*" />
                                     </Grid.RowDefinitions>
-                                    <BoxView 
+                                    <Image
+																				Source="{Binding Photo}"
+																				Aspect="AspectFill"
                                         Grid.Row="0"
-																				HeightRequest="40" 
+																				HeightRequest="200" 
 																				BackgroundColor="Black"
                                         VerticalOptions="FillAndExpand"
                                         HorizontalOptions="Fill"/>

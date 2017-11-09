@@ -3,7 +3,7 @@ import Prelude
 // swiftlint:disable line_length
 extension Project {
   internal static let template = Project(
-    blurb: "A fun project.",
+    blurb: "Home Coffee Roaster",
     category: .template,
     country: .us,
     creator: .template |> User.lens.stats.createdProjectsCount .~ 1,
@@ -30,7 +30,12 @@ extension Project {
       isBacking: nil,
       isStarred: nil
     ),
-    photo: .template,
+    photo: Project.Photo(
+      full: "https://blog.xamarin.com/wp-content/uploads/2017/11/MSC16_fulcrum_028.jpg",
+      med: "https://blog.xamarin.com/wp-content/uploads/2017/11/MSC16_fulcrum_028.jpg",
+      size1024x768: "https://blog.xamarin.com/wp-content/uploads/2017/11/MSC16_fulcrum_028.jpg",
+      small: "https://blog.xamarin.com/wp-content/uploads/2017/11/MSC16_fulcrum_028.jpg"
+    ),
     rewards: [],
     slug: "a-fun-project",
     state: .live,
