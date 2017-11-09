@@ -118,6 +118,15 @@ public let shareButtonStyle =
   <> UIButton.lens.image(forState: .normal) .~ image(named: "share-icon")
   <> UIButton.lens.accessibilityLabel %~ { _ in Strings.dashboard_accessibility_label_share_project() }
 
+public let suggestionsButtonStyle =
+  UIButton.lens.title(forState: .normal) .~ nil
+    <> UIButton.lens.tintColor .~ .white
+    <> UIButton.lens.contentEdgeInsets
+    .~ .init(top: Styles.grid(2), left: Styles.grid(1), bottom: Styles.grid(2),
+             right: Styles.grid(3))
+    <> UIButton.lens.image(forState: .normal) .~ image(named: "lightbulb-icon")
+    <> UIButton.lens.accessibilityLabel %~ { _ in Strings.dashboard_accessibility_label_share_project() }
+
 public let textOnlyButtonStyle = baseButtonStyle
   <> UIButton.lens.titleColor(forState: .normal) .~ .ksr_dark_grey_900
   <> UIButton.lens.backgroundColor(forState: .normal) .~ .clear

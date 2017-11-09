@@ -48,12 +48,15 @@ internal final class DiscoveryPostcardCell: UITableViewCell, ValueCell {
   @IBOutlet fileprivate weak var socialAvatarImageView: UIImageView!
   @IBOutlet fileprivate weak var socialLabel: UILabel!
   @IBOutlet fileprivate weak var socialStackView: UIStackView!
-
+  @IBOutlet fileprivate weak var suggestionsButton: UIButton!
+    
     internal override func awakeFromNib() {
     super.awakeFromNib()
 
     self.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     self.shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
+        
+        self.suggestionsButton.addTarget(self, action: #selector(suggestionsButtonTapped), for: .touchUpInside)
 
     NotificationCenter.default
       .addObserver(forName: Notification.Name.ksr_sessionStarted, object: nil, queue: nil) { [weak self] _ in
@@ -181,6 +184,9 @@ internal final class DiscoveryPostcardCell: UITableViewCell, ValueCell {
 
     _ = self.shareButton
       |> shareButtonStyle
+    
+    _ = self.suggestionsButton
+        |> suggestionsButtonStyle
   }
 
   internal override func bindViewModel() {
@@ -292,5 +298,11 @@ internal final class DiscoveryPostcardCell: UITableViewCell, ValueCell {
   @objc fileprivate func shareButtonTapped() {
     self.viewModel.inputs.shareButtonTapped()
   }
+    
+    @objc fileprivate func suggestionsButtonTapped() {
+        let helper = KickstarterShared_SuggestionHelper.init()
+        helper?.showSuggestionView()
+        
+    }
 
 }

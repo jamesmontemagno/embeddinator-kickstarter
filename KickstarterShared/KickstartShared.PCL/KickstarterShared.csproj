@@ -30,11 +30,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IDialer.cs" />
     <Compile Include="Model\Suggestion.cs" />
-    <Compile Include="View\SuggestionView.cs" />
-    <Compile Include="ViewModel\SuggestionViewModel.cs" />
-    <Compile Include="View\PhonewordView.xaml.cs">
-      <DependentUpon>PhonewordView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModel\SuggestionsViewModel.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="View\ResultsView.cs" />
+    <Compile Include="View\SuggestionsView.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -57,9 +57,7 @@
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\PhonewordView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    <EmbeddedResource Include="View\SuggestionsView.xaml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.19271-pre2\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.19271-pre2\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
