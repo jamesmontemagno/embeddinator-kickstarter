@@ -99,9 +99,16 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon-location.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon-location.imageset\icon-location.pdf" />
+    <ImageAsset Include="Assets.xcassets\icon-heart.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icon-heart.imageset\icon-heart.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\icon-location.imageset\" />
+    <Folder Include="Assets.xcassets\icon-heart.imageset\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -119,6 +126,7 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Effects\iOSImageTintEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KickstartShared.PCL\KickstarterShared.csproj">

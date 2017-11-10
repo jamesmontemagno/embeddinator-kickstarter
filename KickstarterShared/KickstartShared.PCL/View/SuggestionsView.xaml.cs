@@ -19,6 +19,8 @@ namespace KickstarterShared.View
 			On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
 			InitializeComponent();
+
+
 		}
 
 		void Handle_Clicked(object sender, System.EventArgs e)

@@ -77,10 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIHelpers.cs" />
+    <Compile Include="Effects\iOSImageTintEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

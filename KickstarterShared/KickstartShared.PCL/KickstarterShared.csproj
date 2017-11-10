@@ -35,12 +35,14 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="View\ResultsView.cs" />
     <Compile Include="View\SuggestionsView.xaml.cs" />
+    <Compile Include="Effects\ImageTintEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Model\" />
     <Folder Include="View\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\SuggestionsView.xaml" />

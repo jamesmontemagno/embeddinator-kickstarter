@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:effects="using:KickstartShared.Shared.Effects"
     x:Class="KickstarterShared.View.SuggestionsView">
     <ContentPage.Resources>
     	<ResourceDictionary>
@@ -106,7 +107,7 @@
     		<BoxView BackgroundColor="#1d1d1d" HorizontalOptions="Fill" HeightRequest="1"/>
 		 
             <ListView
-    			HasUnevenRows="true"
+    			HasUnevenRows="false"
     			SeparatorColor="Transparent"
     			SeparatorVisibility="None"
                 ItemsSource="{Binding Suggestions}">
@@ -126,31 +127,28 @@
                                      Margin="10, 20, 20, 20">
                                     <Grid>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="7*" />
-                                            <RowDefinition Height="1*" />
-                                            <RowDefinition Height="1*" />
-                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="180" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
 
                                         <Frame
-                                            Grid.RowSpan="6"
+                                            Grid.RowSpan="3"
                                             BackgroundColor="#191919"
                                             CornerRadius="0"/>
                                         
                                         <Image
     										Source="{Binding Photo}"
     										Aspect="AspectFill"
-                                            Grid.Row="0"
-    										HeightRequest="200" 
+                                            Grid.Row="0" 
     										BackgroundColor="Black"
-                                            VerticalOptions="FillAndExpand"
+                                            VerticalOptions="Fill"
                                             HorizontalOptions="Fill"/>
                                         
-                                        <Grid Grid.Row="1"
-                                              HorizontalOptions="FillAndExpand"
-                                              Style="{StaticResource InfoPanelStyle}">
+                                        <Grid Grid.Row="1" 
+                                            Margin="10,0,10,0">
                                             <!-- CITY NAME -->
-                                            <Label HorizontalOptions="Start"
+                                            <Label HorizontalOptions="Start" 
                                                    Text="{Binding Title}"
                                                    Style="{StaticResource CityNameStyle}"
                                                    Margin="0" />
@@ -160,45 +158,54 @@
                                                    Style="{StaticResource PriceStyle}"
                                                    Margin="0" />
                                         </Grid>
-                                        <Grid Grid.Row="2"
-                                              VerticalOptions="Center"
-                                              Style="{StaticResource InfoPanelStyle}">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
-
+                                        
+                                        <Grid Grid.Row="2" Margin="10,0,10,0">
+                                            
                                             <!-- Distance -->
-                                            <StackLayout Grid.Column="0"
+                                            <StackLayout 
+                                                HorizontalOptions="Start"
+                                                VerticalOptions="Start"
                                                 Orientation="Horizontal">
-                                                <BoxView
-                                                    BackgroundColor="Blue"
+                                                <Image
+                                                    Source="icon-location"
+                                                    effects:ImageTint.TintColor="{StaticResource BlueColor}"     
                                                     HeightRequest="12"
                                                     WidthRequest="12"/>
+
                                                 <Label Text="{Binding Distance}"
                                                        Style="{StaticResource DefaultDetailLabelStyle}" />
                                             </StackLayout>
                                             
+                                            <StackLayout 
+                                                HorizontalOptions="End"
+                                                VerticalOptions="Start"
+                                                Orientation="Horizontal">
+                                                <Image
+                                                    effects:ImageTint.TintColor="{StaticResource BlueColor}"     
+                                                    Source="icon-heart"
+                                                    WidthRequest="20"/>
+                                                <Image
+                                                    effects:ImageTint.TintColor="{StaticResource BlueColor}"     
+                                                    Source="icon-heart"
+                                                    WidthRequest="20"/>
+                                                <Image
+                                                    effects:ImageTint.TintColor="{StaticResource BlueColor}"     
+                                                    Source="icon-heart" 
+                                                    WidthRequest="20"/>
+                                                <Image
+                                                    effects:ImageTint.TintColor="{StaticResource BlueColor}"     
+                                                    Source="icon-heart"
+                                                    WidthRequest="20"/>
+                                                <Image
+                                                    effects:ImageTint.TintColor="Gray"     
+                                                    Source="icon-heart"
+                                                    WidthRequest="20"/>
+                                                
+                                            </StackLayout>
 
 
                                         </Grid>
 
-                                        <!-- RATING -->
-                                        <StackLayout Margin="20,0,0,0"
-                                            Grid.Row="3"
-                                            Orientation="Horizontal">
-                                            <BoxView
-                                                    BackgroundColor="Red"
-                                                    HeightRequest="12"
-                                                    WidthRequest="12"/>
-                                            <Label Text="{Binding Rating}"
-                                                   Style="{StaticResource DefaultDetailLabelStyle}" />
-                                        </StackLayout>
                                         
                                     
                                     </Grid>
