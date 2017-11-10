@@ -89,129 +89,125 @@
 	<ContentPage.Content>
 		<StackLayout>
 
-			<Grid HeightRequest="60" BackgroundColor="White">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="60"/>
-					<ColumnDefinition Width="*"/>
-					<ColumnDefinition Width="60"/>
-				</Grid.ColumnDefinitions>
+    		<Grid HeightRequest="60" BackgroundColor="White">
+    			<Grid.ColumnDefinitions>
+    				<ColumnDefinition Width="60"/>
+    				<ColumnDefinition Width="*"/>
+    				<ColumnDefinition Width="60"/>
+    			</Grid.ColumnDefinitions>
 
-				<Button Grid.Column="0" 
-					Text="Back" TextColor="Black" 
-					WidthRequest="60"
-					HeightRequest="60"
-					Clicked="Handle_Clicked" />
-			</Grid>
+    			<Button Grid.Column="0" 
+    				Text="Back" TextColor="Black" 
+    				WidthRequest="60"
+    				HeightRequest="60"
+    				Clicked="Handle_Clicked" />
+    		</Grid>
 
-			<BoxView BackgroundColor="Black" HorizontalOptions="Fill" HeightRequest="1"/>
+    		<BoxView BackgroundColor="#1d1d1d" HorizontalOptions="Fill" HeightRequest="1"/>
 		 
-        <ListView
-			HasUnevenRows="true"
-			SeparatorColor="Transparent"
-			SeparatorVisibility="None"
-            ItemsSource="{Binding Suggestions}">
-			<ListView.RowHeight>
-                <OnPlatform 
-                    x:TypeArguments="x:Int32"
-                    Android="310"
-                    iOS="310"
-                    WinPhone="340"/>
-            </ListView.RowHeight>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <ContentView
-                                 BackgroundColor="{StaticResource WhiteColor}"
-                                 Margin="20, 0, 20, 20">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="6.5*" />
-                                        <RowDefinition Height="1.75*" />
-                                        <RowDefinition Height="1.5*" />
-                                        <RowDefinition Height="0.25*" />
-                                    </Grid.RowDefinitions>
-                                    <Image
-																				Source="{Binding Photo}"
-																				Aspect="AspectFill"
-                                        Grid.Row="0"
-																				HeightRequest="200" 
-																				BackgroundColor="Black"
-                                        VerticalOptions="FillAndExpand"
-                                        HorizontalOptions="Fill"/>
-                                    <Grid Grid.Row="1"
-                                          HorizontalOptions="FillAndExpand"
-                                          Style="{StaticResource InfoPanelStyle}">
-                                        <!-- CITY NAME -->
-                                        <Label HorizontalOptions="Start"
-                                               Text="{Binding Title}"
-                                               Style="{StaticResource CityNameStyle}"
-                                               Margin="0" />
-                                        <!-- PRICE -->
-                                        <Label HorizontalOptions="End"
-                                               Text="$$$"
-                                               Style="{StaticResource PriceStyle}"
-                                               Margin="0" />
-                                    </Grid>
-                                    <Grid Grid.Row="2"
-                                          VerticalOptions="Center"
-                                          Style="{StaticResource InfoPanelStyle}">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="Auto" />
-                                        </Grid.ColumnDefinitions>
-                                        <!-- ORIGIN -->
-                                        <StackLayout Grid.Column="0"
+            <ListView
+    			HasUnevenRows="true"
+    			SeparatorColor="Transparent"
+    			SeparatorVisibility="None"
+                ItemsSource="{Binding Suggestions}">
+    			<ListView.RowHeight>
+                    <OnPlatform 
+                        x:TypeArguments="x:Int32"
+                        Android="310"
+                        iOS="310"
+                        WinPhone="340"/>
+                </ListView.RowHeight>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <ContentView
+                                     BackgroundColor="{StaticResource WhiteColor}"
+                                     Margin="10, 20, 20, 20">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="7*" />
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Frame
+                                            Grid.RowSpan="6"
+                                            BackgroundColor="#191919"
+                                            CornerRadius="0"/>
+                                        
+                                        <Image
+    										Source="{Binding Photo}"
+    										Aspect="AspectFill"
+                                            Grid.Row="0"
+    										HeightRequest="200" 
+    										BackgroundColor="Black"
+                                            VerticalOptions="FillAndExpand"
+                                            HorizontalOptions="Fill"/>
+                                        
+                                        <Grid Grid.Row="1"
+                                              HorizontalOptions="FillAndExpand"
+                                              Style="{StaticResource InfoPanelStyle}">
+                                            <!-- CITY NAME -->
+                                            <Label HorizontalOptions="Start"
+                                                   Text="{Binding Title}"
+                                                   Style="{StaticResource CityNameStyle}"
+                                                   Margin="0" />
+                                            <!-- PRICE -->
+                                            <Label HorizontalOptions="End"
+                                                   Text="{Binding Price}"
+                                                   Style="{StaticResource PriceStyle}"
+                                                   Margin="0" />
+                                        </Grid>
+                                        <Grid Grid.Row="2"
+                                              VerticalOptions="Center"
+                                              Style="{StaticResource InfoPanelStyle}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <!-- Distance -->
+                                            <StackLayout Grid.Column="0"
+                                                Orientation="Horizontal">
+                                                <BoxView
+                                                    BackgroundColor="Blue"
+                                                    HeightRequest="12"
+                                                    WidthRequest="12"/>
+                                                <Label Text="{Binding Distance}"
+                                                       Style="{StaticResource DefaultDetailLabelStyle}" />
+                                            </StackLayout>
+                                            
+
+
+                                        </Grid>
+
+                                        <!-- RATING -->
+                                        <StackLayout Margin="20,0,0,0"
+                                            Grid.Row="3"
                                             Orientation="Horizontal">
-                                            <Label Text="asdf"
-                                                   Style="{StaticResource DefaultDetailLabelStyle}" />
-                                            <Label Text="asdf"
-                                                   Style="{StaticResource DefaultDetailLabelStyle}" />
-                                        </StackLayout>
-                                        <!-- SEPARATOR -->
-                                        <BoxView Grid.Column="1"
-                                                 BackgroundColor="#919191"
-                                                 HeightRequest="0.5"
-                                                 VerticalOptions="Start"
-                                                 Margin="0, 8, 0, 0"
-                                                 WidthRequest="18">
-                                            <BoxView.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double"
-                                                            Android="15"
-                                                            iOS="18"
-                                                            WinPhone="15" />
-                                            </BoxView.WidthRequest>
-                                        </BoxView>
-                                        <!-- DESTINATION -->
-                                        <StackLayout Grid.Column="2"
-                                                     Orientation="Horizontal">
-                                            <Label Text="qwer"
-                                                   Style="{StaticResource DefaultDetailLabelStyle}" />
-                                            <Label Text="poui"
+                                            <BoxView
+                                                    BackgroundColor="Red"
+                                                    HeightRequest="12"
+                                                    WidthRequest="12"/>
+                                            <Label Text="{Binding Rating}"
                                                    Style="{StaticResource DefaultDetailLabelStyle}" />
                                         </StackLayout>
-                                        <!-- TIME -->
-                                        <Label Grid.Column="4"
-                                               Text="lkjh"
-                                               Style="{StaticResource DefaultDetailLabelStyle}" />
-                                        <!-- STOPS -->
-                                        <Label Grid.Column="6"
-                                               Text="mnbv"
-                                               Style="{StaticResource DefaultDetailLabelStyle}"
-                                               LineBreakMode="TailTruncation"/>
+                                        
+                                    
                                     </Grid>
-                                </Grid>
-                            </ContentView>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-			</StackLayout>
+                                </ContentView>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

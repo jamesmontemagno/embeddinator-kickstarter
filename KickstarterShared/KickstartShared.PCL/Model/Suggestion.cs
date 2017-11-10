@@ -16,5 +16,20 @@ namespace KickstarterShared.Model
 		{
 			get; set;
 		}
+
+		public string Price
+		{
+			get; set;
+		}
+
+		public string Distance
+		{
+			get; set;
+		}
+
+		public double Rating
+		{
+			get; set;
+		}
 	}
 }
